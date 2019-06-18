@@ -1,0 +1,69 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Run unit tests"
+  lane :do_test_app do
+    run_tests(
+      scheme: ENV['SCHEME']
+    )
+  end
+
+  desc "Increment build number"
+  lane :do_increment_build_number do
+    version_numner = get_version_number
+    build_number = Integer(get_build_number) + 1
+    increment_build_number({
+      build_number: build_number
+    })
+  end
+
+  desc "Building app"
+  lane :do_build_app do
+    gym(
+      scheme: ENV['SCHEME'],
+      clean: true,
+      export_method: "development",
+      include_bitcode: true,
+      include_symbols: true,
+      output_name: "#{ENV['SCHEME']}.ipa",
+      output_directory: "../../Build/#{ENV['SCHEME']}/ipa"
+    )
+  end
+
+  desc "Upload app to Testflight"
+  lane :do_upload_app_to_testflight do
+    pilot(
+      username: "Apple ID username",
+      app_identifier: ENV['BUNDLE_IDENTIFIER']
+    )
+  end
+
+  desc "Build & Upload app to Testflight"
+  lane :alpha do
+    # ensure_git_status_clean
+    do_test_app
+    do_increment_build_number
+    do_build_app
+    do_upload_app_to_testflight
+  end
+end
