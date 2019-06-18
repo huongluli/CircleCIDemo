@@ -1,8 +1,6 @@
 version: 2
 jobs:
   build:
-    # docker:
-    #   - image: circleci/ruby:2.4.1
     macos:
       xcode: "10.2.0"
     working_directory: ~/MiniApp
@@ -21,4 +19,5 @@ jobs:
           command: |
             cd MiniApp
             fastlane do_test_app --env Dev
-      # - run: echo "A first hello"
+            # fastlane do_build_app --env Dev
+            # fastlane alpha --env Dev
