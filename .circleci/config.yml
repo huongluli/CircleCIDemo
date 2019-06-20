@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  test_app:
     macos:
       xcode: "10.2.0"
     working_directory: ~/MiniApp
@@ -21,3 +21,12 @@ jobs:
             fastlane do_test_app --env Dev
             # fastlane do_build_app --env Dev
             # fastlane alpha --env Dev
+
+workflows:
+  version: 2
+  miniApp_test:
+    jobs:
+      - test_app:
+        filters:
+          branches:
+            only: develop
