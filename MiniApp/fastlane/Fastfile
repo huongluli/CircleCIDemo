@@ -18,6 +18,7 @@ default_platform(:ios)
 platform :ios do
 
   before_all do
+    # Add Match to the fastlane. For fastlane match to work correctly, you must add setup_circle_ci to before_all. This ensure tha a temporary Fastlane keychain is used
     setup_circle_ci
   end
 
