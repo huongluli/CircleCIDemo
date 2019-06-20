@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     macos:
       xcode: "10.2.0"
     working_directory: ~/MiniApp
