@@ -24,9 +24,9 @@ jobs:
 
 workflows:
   version: 2
-  miniApp_test:
+  test_develop:
     jobs:
       - test_app:
-        filters:
-          branches:
-            only: develop
+          filters:
+            branches:
+              only: develop
