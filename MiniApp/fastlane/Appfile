@@ -1,5 +1,6 @@
 app_identifier("dev.huongcao.miniapp") # The bundle identifier of your app
 apple_id("info.irevoo@gmail.com") # Your Apple email address
+team_id "MM4MK92M66" # Developer Portal Team ID
 
 
 # For more information about the Appfile, see:
