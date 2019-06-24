@@ -9,7 +9,7 @@ storage_mode("git")
 
 clone_branch_directly(true)
 
-git_branch(master)
+git_branch("master")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
