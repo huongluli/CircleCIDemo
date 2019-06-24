@@ -40,7 +40,7 @@ platform :ios do
 
   desc "Building app"
   lane :do_build_app do
-    match(type: "development")
+    match(type: "development", readonly: is_ci)
     gym(
       scheme: ENV['SCHEME'],
       clean: true,
