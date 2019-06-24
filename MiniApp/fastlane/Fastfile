@@ -40,10 +40,11 @@ platform :ios do
 
   desc "Building app"
   lane :do_build_app do
+    match(type: "development")
     gym(
       scheme: ENV['SCHEME'],
       clean: true,
-      export_method: "adhoc",
+      export_method: "development",
       include_bitcode: true,
       include_symbols: true,
       output_name: "#{ENV['SCHEME']}.ipa",
