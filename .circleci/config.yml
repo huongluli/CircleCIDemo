@@ -18,8 +18,9 @@ jobs:
           name: fastlane
           command: |
             cd MiniApp
-            fastlane do_test_app --env Dev
-            # fastlane do_build_app --env Dev
+            # fastlane do_test_app --env Dev
+            fastlane do_build_app --env Dev
+            # fastlane do_upload_app_to_testflight --env Dev
             # fastlane alpha --env Dev
 
 workflows:

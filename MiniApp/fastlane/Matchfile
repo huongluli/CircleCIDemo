@@ -6,5 +6,5 @@ git_url("https://github.com/fastlane/certificates")
 storage_mode("git")
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier("huongcao.MiniApp")
-username("huong.cao@yopmail.com") # Your Apple Developer Portal username
+app_identifier("dev.huongcao.miniapp")
+username("Tu Chu") # Your Apple Developer Portal username

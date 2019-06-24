@@ -1,5 +1,5 @@
-app_identifier("huongcao.MiniApp") # The bundle identifier of your app
-apple_id("huong.cao.dhsp@gmail.com") # Your Apple email address
+app_identifier("dev.huongcao.miniapp") # The bundle identifier of your app
+apple_id("info.irevoo@gmail.com") # Your Apple email address
 
 
 # For more information about the Appfile, see:

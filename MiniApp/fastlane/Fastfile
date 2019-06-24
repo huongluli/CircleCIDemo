@@ -54,7 +54,7 @@ platform :ios do
   desc "Upload app to Testflight"
   lane :do_upload_app_to_testflight do
     pilot(
-      username: "Apple ID username",
+      username: ENV['APPLE_ID_USERNAME'],
       app_identifier: ENV['BUNDLE_IDENTIFIER']
     )
   end
