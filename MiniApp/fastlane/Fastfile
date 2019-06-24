@@ -43,7 +43,7 @@ platform :ios do
     gym(
       scheme: ENV['SCHEME'],
       clean: true,
-      export_method: "development",
+      export_method: "adhoc",
       include_bitcode: true,
       include_symbols: true,
       output_name: "#{ENV['SCHEME']}.ipa",
