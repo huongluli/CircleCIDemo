@@ -7,6 +7,10 @@ git_url("git@github.com:huongluli/certificates.git")
 
 storage_mode("git")
 
+clone_branch_directly(true)
+
+git_branch(master)
+
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
 app_identifier("dev.huongcao.miniapp")
