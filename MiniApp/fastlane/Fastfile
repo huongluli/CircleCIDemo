@@ -40,6 +40,7 @@ platform :ios do
 
   desc "Building app"
   lane :do_build_app do
+    # Signing
     match(type: "development", readonly: is_ci)
     gym(
       scheme: ENV['SCHEME'],
