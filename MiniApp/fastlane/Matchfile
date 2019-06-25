@@ -5,7 +5,7 @@
 
 git_url("https://github.com/huongluli/certificates.git")
 storage_mode("git")
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+type("adhoc") # The default type, can be: appstore, adhoc, enterprise or development
 
 app_identifier("dev.huongcao.miniapp")
 username("info.irevoo@gmail.com") # Your Apple Developer Portal username
